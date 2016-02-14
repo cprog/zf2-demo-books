@@ -6,20 +6,26 @@
  */
 
 return array(
+    'service_manager' => array(
+        'invokables' => array(
+            'Books\Service\ListServiceInterface' => 'Books\Service\ListService'
+        )
+    ),
     'view_manager' => array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
     ),
     'controllers' => array(
-        'invokables' => array(
-            'Books\Controller\List' => 'Books\Controller\ListController'
+        'factories' => array(
+            'Books\Controller\List' => 'Books\Factory\ListControllerFactory'
         )
+
     ),
     'router' => array(
         'routes' => array(
-            'lister' => array(
-                'type' => 'literal',
+            'List' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route' => '/books',
                     'defaults' => array(

@@ -1,0 +1,9 @@
+<h1>ListOfBooks</h1>
+<?php foreach ($this->listOfBooks as $book): ?>
+    <article>
+        <h1 id="post<?= $book->getId() ?>"><?= $book->getTitle() ?></h1>
+        <p>
+            <?= $book->getText() ?>
+        </p>
+    </article>
+<?php endforeach ?>
