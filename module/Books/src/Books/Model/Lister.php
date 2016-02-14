@@ -51,7 +51,7 @@ class Lister implements ListInterface
         return $this->text;
     }
 
-    public function setISBN($text)
+    public function setISBN($isbn)
     {
         $this->isbn = $isbn;
     }
